@@ -1,0 +1,34 @@
+.flex-container {
+  background: white;
+  padding: 10px;
+  border: 5px solid black;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+}
+
+.item {
+  background-color: burlywood;
+  padding: 20px;
+  width: 200px;
+  border: 5px solid black;
+}
+
+.item-flex1 {
+  background: #d3c0b1;
+  color: white;
+  padding: 10px;
+  border: 5px solid black;
+  margin: 10px;
+  width: 250px;
+  flex-grow: 1;
+}
+
+.item-flex2 {
+  background: #d3c0b1;
+  color: white;
+  padding: 10px;
+  border: 5px solid black;
+  margin: 10px;
+  width: 250px;
+}
