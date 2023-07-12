@@ -1,13 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: [
+    './src/**/*.{js,jsx,ts,tsx}',
+    './src/components/**/*.{js,jsx,ts,tsx}'
+  ],
   theme: {
     screens: {
       xs: '460px',
       sm: '640px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px',
+      'sm1': '701px',
+      md: '801px',
+      'md1': '921px',
+      lg: '981px',
+      'lg1': '1081px',
+      xl: '1201px',
+      'xl1':'1350px',
       '2xl': '1536px',
     },
     extend: {
@@ -17,6 +24,7 @@ export default {
         violet1: '#5624d0',
 
         grey1: '#6a6f73',
+        grey2: '#f7f9fa',
 
         brown1: '#3d3c0a',
 
