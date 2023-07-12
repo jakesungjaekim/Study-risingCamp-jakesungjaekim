@@ -17,14 +17,14 @@ const Dashboard = () => {
         </div>
       </aside>
       {/* min-width > 640px */}
-      <div className='mt-6 sm1:mt-12 sm1:px-6 xs1:block'>
+      <div className='mt-6 sm1:mt-12 sm1:px-0 xs1:block'>
         <h1 className='text-[24px] lg:text-[32px] mb-4 w-full'>광범위한 강의 모음</h1>
         <p className='text-[19px] w-full'>210,000개 이상의 온라인 동영상 강의 중에서 선택하세요. 매월 새롭게 강의가 추가됩니다.</p>
       </div>
       {/* DashBoard Tap */}
       <article className='hidden xs1:block'>
         <div className='flex items-center justify-between'>
-          <div className='space-x-2 max-w-[607px] mt-6 flex items-center justify-between sm1:px-6 text-[16px] text-grey1 font-bold'>
+          <div className='space-x-2 max-w-[607px] mt-6 flex items-center justify-between sm1:px-0 text-[16px] text-grey1 font-bold'>
             <div className='flex items-center justify-center cursor-pointer px-1 py-2 h-[48px] hover:text-black1 active:text-black1'>Python</div>
             <div className='flex items-center justify-center cursor-pointer px-1 py-2 h-[48px] hover:text-black1 active:text-black1'>Excel</div>
             <div className='flex items-center justify-center cursor-pointer px-1 py-2 h-[48px] hover:text-black1 active:text-black1'>웹 개발</div>
