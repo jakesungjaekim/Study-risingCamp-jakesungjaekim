@@ -5,7 +5,7 @@ import ImageHeor2 from '../../assets/images/image-hero2.png'
 const Hero = () => {
 
   return (
-    <article className='xl1:container xl1:min-h-[350px] sm1:min-h-[210px] md:min-h-[300px] xl:min-h-[350px] xl1:mx-auto'>
+    <article className='xl1:container xl1:max-w-[1340px] h-[250px] md:min-h-[300px] xl:min-h-[350px] xl1:min-h-[350px] xl1:mx-auto'>
       <div className='relative w-full h-full sm1:flex '>
         <img className='object-cover w-full h-full mb-4 sm1:hidden' src={ImageHero} alt="image-hero" />
         <img className="hidden object-cover w-full h-full mb-12 sm1:block"  src={ImageHeor2} alt="image-hero2" />
