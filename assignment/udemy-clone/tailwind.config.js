@@ -24,6 +24,7 @@ export default {
 
         violet1: '#5624d0',
         violet2: '#cec0fc',
+        violet3: '#a435f0',
 
         grey1: '#6a6f73',
         grey2: '#f7f9fa',
@@ -32,9 +33,17 @@ export default {
 
         yellow1: '#eceb98',
         yellow2: '#f3ca8c',
+
+        red1: '#b32d0f',
       },
       backgroundImage: {
         'desc': "url('https://s.udemycdn.com/home/non-student-cta/instructor-2x-v3.jpg"
+      },
+      textUnderlineOffset: {
+        1: '1px',
+        2: '2px',
+        3: '3px',
+        4: '4px',
       }
 
     },
