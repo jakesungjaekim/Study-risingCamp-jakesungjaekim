@@ -23,13 +23,15 @@ export default {
         black1: '#1c1d1f',
 
         violet1: '#5624d0',
+        violet2: '#cec0fc',
 
         grey1: '#6a6f73',
         grey2: '#f7f9fa',
 
         brown1: '#3d3c0a',
 
-        yellow1: '#eceb98'
+        yellow1: '#eceb98',
+        yellow2: '#f3ca8c',
       },
       backgroundImage: {
         'desc': "url('https://s.udemycdn.com/home/non-student-cta/instructor-2x-v3.jpg"
