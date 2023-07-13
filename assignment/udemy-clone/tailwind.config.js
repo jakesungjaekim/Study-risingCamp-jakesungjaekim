@@ -30,7 +30,11 @@ export default {
         brown1: '#3d3c0a',
 
         yellow1: '#eceb98'
+      },
+      backgroundImage: {
+        'desc': "url('https://s.udemycdn.com/home/non-student-cta/instructor-2x-v3.jpg"
       }
+
     },
   },
   plugins: [],

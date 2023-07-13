@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className='flex flex-col px-8 xl1:px-12 py-6 h-[633px] sm1:h-[293px] bg-black1 text-white'>
       <div className='flex items-start justify-between'>
-        <div className='grid grid-cols-1 gap-6 sm1:grid-cols-3 lg:gap-24 xl:gap-32'>
+        <div className='grid grid-cols-1 gap-6 sm1:grid-cols-3 lg:gap-24 xl:gap-28'>
           <div className='space-y-2 text-[13px] w-[157px] flex flex-col items-start justify-center'>
             <a href='#' className='py-1 hover:underline'>Udemy Business</a>
             <a href='#' className='py-1 hover:underline'>Udemy에서 가르치기</a>
