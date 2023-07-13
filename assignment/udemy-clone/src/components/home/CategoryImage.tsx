@@ -16,35 +16,35 @@ const CategoryImage = () => {
         {/* Grid */}
         <div className='grid gap-4 xs1:grid-cols-3 sm1:grid-cols-4'>
           <div>
-            <img src={ImgCategory1} alt="image-cate1" />
+            <img className='transition duration-300 ease-in-out hover:scale-105' src={ImgCategory1} alt="image-cate1" />
             <div className='pt-2 pb-4 font-bold'>디자인</div>
           </div>
           <div>
-            <img src={ImgCategory2} alt="image-cate1" />
+            <img className='transition duration-300 ease-in-out hover:scale-105' src={ImgCategory2} alt="image-cate1" />
             <div className='pt-2 pb-4 font-bold'>개발</div>
           </div>
           <div>
-            <img src={ImgCategory3} alt="image-cate1" />
+            <img className='transition duration-300 ease-in-out hover:scale-105' src={ImgCategory3} alt="image-cate1" />
             <div className='pt-2 pb-4 font-bold'>마케팅</div>
           </div>
           <div>
-            <img src={ImgCategory4} alt="image-cate1" />
+            <img className='transition duration-300 ease-in-out hover:scale-105' src={ImgCategory4} alt="image-cate1" />
             <div className='pt-2 pb-4 font-bold'>IT 및 소프트웨어</div>
           </div>
           <div>
-            <img src={ImgCategory5} alt="image-cate1" />
+            <img className='transition duration-300 ease-in-out hover:scale-105' src={ImgCategory5} alt="image-cate1" />
             <div className='pt-2 pb-4 font-bold'>자기 계발</div>
           </div>
           <div>
-            <img src={ImgCategory6} alt="image-cate1" />
+            <img className='transition duration-300 ease-in-out hover:scale-105' src={ImgCategory6} alt="image-cate1" />
             <div className='pt-2 pb-4 font-bold'>비즈니스</div>
           </div>
           <div>
-            <img src={ImgCategory7} alt="image-cate1" />
+            <img className='transition duration-300 ease-in-out hover:scale-105' src={ImgCategory7} alt="image-cate1" />
             <div className='pt-2 pb-4 font-bold'>사진</div>
           </div>
           <div>
-            <img src={ImgCategory8} alt="image-cate1" />
+            <img className='transition duration-300 ease-in-out hover:scale-105' src={ImgCategory8} alt="image-cate1" />
             <div className='pt-2 pb-4 font-bold'>음악</div>
           </div>
         </div>
