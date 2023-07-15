@@ -4,7 +4,6 @@ import Carousel from '../components/home/Carousel'
 import CategoryImage from '../components/home/CategoryImage'
 import CategoryTopic from '../components/home/CategoryTopic'
 import Description from '../components/home/Description'
-import Footer from '../components/common/Footer'
 
 
 const HomePage: React.FC = () => {
@@ -16,7 +15,6 @@ const HomePage: React.FC = () => {
       <CategoryImage />
       <CategoryTopic />
       <Description />
-      <Footer /> 
     </>
   )
 }

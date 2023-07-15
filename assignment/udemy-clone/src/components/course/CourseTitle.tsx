@@ -7,10 +7,6 @@ import { BiInfinite } from 'react-icons/bi'
 
 
 
-
-
-
-
 const CourseTitle = () => {
   return (
     <section className='py-8 w-full lg:min-h-[295px] bg-black1 text-white'>
