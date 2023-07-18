@@ -1,36 +1,50 @@
 import { Link } from 'react-router-dom'
 import ImgLogo from '../../assets/images/image-logo.svg'
+import ImgGlobal from '../../assets/images/image-global.svg'
+import ImgMenu from '../../assets/images/image-menu.svg'
+import ImgPerson from '../../assets/images/image-person.svg'
+import ImgSearch from '../../assets/images/image-search.svg'
 
 const Header:React.FC = () => {
   return (
     <header className='relative w-screen h-20 px-10'>
       <div className="flex items-center w-full h-full justfify-center">
         {/* LOGO */}
-        <div className='w-[30px] h-full'>
-          <Link to="/">
+          <Link to="/" className='min-w-[30px] w-full h-full flex items-center justify-start'>
             <img src={ImgLogo} alt="logo" className="w-[30px] h-full" />
           </Link>
-        </div>
         {/* SEARCH // width 고정값 (358.5) h: 48px px-6*/}
         <div className='px-6'>
-          <div className='w-[334.7px] h-12 rounded-full shadow-md hover:shadow-lg'>
-
+          <div className='min-w-[300px] lg:min-w-[334.71px] duration-500 lg:justify-between text-sm font-AibnMedium flex items-center h-12 border border-gray-200 rounded-full shadow-md hover:shadow-lg'>
+            <button className='pl-2 min-w-[80px] h-full'>
+              <span className='w-full px-4 truncate'>어디든지</span>
+            </button>
+            <span className='h-[24px] border-r border-gray-200'/>
+            <button className='min-w-[96.07px] h-full text-ellipsis'>
+              <span className='truncate'>언제든 일주일</span>
+            </button>
+            <div className='h-[24px] border-r border-gray-200'/>
+            <button className='min-w-[122.14px] flex items-center h-full text-gray-400 truncate'>
+              <p className='px-4 min-w-[81.1px]'>게스트 추가</p>
+              <img className='w-8 h-8 mr-[7px] my-[7px]' src={ImgSearch} alt="" />
+            </button>
           </div>
         </div>
         {/* ETC */}
-        <div className='flex items-center justify-between h-full'>
-          <div className='p-3 text-sm rounded-full hover:bg-gray-100 font-AirbnbMedium'>당신의 공간을 에어비앤비하세요</div>
-          <div className='p-3 rounded-full hover:bg-gray-100'>234</div>
-          <div className='p-3 ounded-full hover:bg-gray-100'>3456456</div>
+        <div className='flex items-center justify-between w-full h-full md:justify-end'>
+          <div className='flex items-center justify-center p-3 text-sm rounded-full hover:bg-gray-100 font-AirbnbMedium whitespace-nowrap'>
+            당신의 공간을 에어비앤비하세요
+          </div>
+          <button className='flex items-center justify-center w-10 h-[42px] rounded-full hover:bg-gray-100 mr-2'>
+            <img src={ImgGlobal} alt="image-global" />
+          </button>
+          <div className='flex items-center justify-between w-[77px] h-[42px] px-3 py-[5px] border border-gray-200 rounded-full hover:shadow-lg'>
+            <img src={ImgMenu} alt="" />
+            <img className='ml-3' src={ImgPerson} alt="" />
+          </div>
         </div>
       </div>
       <div className='absolute bottom-0 left-0 right-0 h-[1px] bg-gray-200'/>
-      
-      <div className='font-AirbnbBlack'>테스트 테스트</div>
-      <div className='font-AirbnbBold'>테스트 테스트</div>
-      <div className='font-AirbnbBook'>테스트 테스트</div>
-      <div className='font-AirbnbLight'>테스트 테스트</div>
-      <div className='font-AirbnbMedium'>테스트 테스트</div>
     </header>
     
   )
