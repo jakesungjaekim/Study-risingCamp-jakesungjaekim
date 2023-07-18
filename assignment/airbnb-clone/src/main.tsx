@@ -1,10 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+import './styles/index.css'
+import { createRoot } from 'react-dom/client'
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+import Router from './Router.tsx'
+
+
+const el = document.getElementById('root') as HTMLElement
+const root = createRoot(el)
+
+root.render(<Router />)
+
+
