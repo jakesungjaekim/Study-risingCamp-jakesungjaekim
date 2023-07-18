@@ -10,7 +10,15 @@ export default {
       'xl': '1280px',
       '2xl':'1540px',
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        AirbnbBlack : ['AirbnbCereal-Black', 'sans-serif'],
+        AirbnbBold : ['AirbnbCereal-Bold', 'sans-serif'],
+        AirbnbBook : ['AirbnbCereal-Book', 'sans-serif'],
+        AirbnbLight : ['AirbnbCereal-Light', 'sans-serif'],
+        AirbnbMedium : ['AirbnbCereal-Medium', 'sans-serif'],
+      }
+    },
   },
   plugins: [],
 }

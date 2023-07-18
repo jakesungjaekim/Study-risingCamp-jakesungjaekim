@@ -2,3 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@font-face {
+  font-family: 'AirbnbCreal-Black';
+  src: url('/fonts/AirbnbCereal-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AirbnbCereal-Bold';
+  src: url('/fonts/AirbnbCereal-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AirbnbCereal-Book';
+  src: url('/fonts/AirbnbCereal-Book.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AirbnbCereal-Light';
+  src: url('/fonts/AirbnbCereal-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AirbnbCereal-Medium';
+  src: url('/fonts/AirbnbCereal-Medium.ttf') format('truetype');
+}
