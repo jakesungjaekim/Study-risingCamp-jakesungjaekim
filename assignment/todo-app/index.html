@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./index.js" defer></script>
+  <title>Todo-App</title>
+</head>
+<body>
+  <main>
+    <section class="container flex flex-col items-center justify-start h-screen py-4 mx-auto bg-rose-50">
+      <div class="text-3xl font-bold">TODO-List</div>
+      <div>
+        <form id="todo-form">
+          <input
+            id="write-todo"
+            class="h-10 px-3 py-2 border-2 border-gray-300 rounded-md w-96"
+            type="text" 
+            placeholder="TODO-List 적기">
+          <button 
+            id="submit-todo"
+            class="p-2 text-white duration-200 bg-black rounded-lg hover:text-black hover:bg-white hover:ease-in-out hover:border hover:border-black">TODO 추가하기</button>
+        </form>
+      </div>
+        <!-- TODO-List -->
+      <div class="container">
+        <div class="container flex flex-col items-center justify-center space-x-5 todo-list">
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
