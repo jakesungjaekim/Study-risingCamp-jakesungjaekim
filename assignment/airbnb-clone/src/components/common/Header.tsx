@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import ImgLogo from '../../assets/images/image-logo.svg'
+import ImgLogo2 from '../../assets/images/image-logoText.svg'
 import ImgGlobal from '../../assets/images/image-global.svg'
 import ImgMenu from '../../assets/images/image-menu.svg'
 import ImgPerson from '../../assets/images/image-person.svg'
@@ -12,20 +13,21 @@ const Header:React.FC = () => {
         {/* LOGO */}
           <Link to="/" className='min-w-[30px] w-full h-full flex items-center justify-start'>
             <img src={ImgLogo} alt="logo" className="w-[30px] h-full" />
+            <img src={ImgLogo2} alt='logo' className='hidden xl:ml-2 xl:block' />
           </Link>
         {/* SEARCH // width 고정값 (358.5) h: 48px px-6*/}
         <div className='px-6'>
           <div className='min-w-[300px] lg:min-w-[334.71px] duration-500 lg:justify-between text-sm font-AibnMedium flex items-center h-12 border border-gray-200 rounded-full shadow-md hover:shadow-lg'>
             <button className='pl-2 min-w-[80px] h-full'>
-              <span className='w-full px-4 truncate'>어디든지</span>
+              <div className='max-w-[79px] lg:max-w-[81px] w-full px-4 overflow-hidden whitespace-nowrap text-ellipsis'>어디든지</div>
             </button>
             <span className='h-[24px] border-r border-gray-200'/>
-            <button className='min-w-[96.07px] h-full text-ellipsis'>
-              <span className='truncate'>언제든 일주일</span>
+            <button className='min-w-[96.07px] h-full  flex items-center justify-center'>
+              <div className='max-w-[75px] lg:max-w-[95px] overflow-hidden whitespace-nowrap text-ellipsis'>언제든 일주일</div>
             </button>
             <div className='h-[24px] border-r border-gray-200'/>
             <button className='min-w-[122.14px] flex items-center h-full text-gray-400 truncate'>
-              <p className='px-4 min-w-[81.1px]'>게스트 추가</p>
+              <p className='px-4 max-w-[81.1px] lg:max-w-[122px] overflow-hidden whitespace-nowrap text-ellipsis'>게스트 추가</p>
               <img className='w-8 h-8 mr-[7px] my-[7px]' src={ImgSearch} alt="" />
             </button>
           </div>
