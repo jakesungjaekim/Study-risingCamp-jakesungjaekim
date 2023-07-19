@@ -8,7 +8,7 @@ import ImgSearch from '../../assets/images/image-search.svg'
 
 const Header:React.FC = () => {
   return (
-    <header className='relative w-screen h-20 px-10'>
+    <header className='sticky top-0 w-screen h-20 px-10 bg-white'>
       <div className="flex items-center w-full h-full justfify-center">
         {/* LOGO */}
           <Link to="/" className='min-w-[30px] w-full h-full flex items-center justify-start'>
