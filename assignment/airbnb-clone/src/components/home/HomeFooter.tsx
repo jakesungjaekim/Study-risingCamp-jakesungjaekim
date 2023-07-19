@@ -9,7 +9,7 @@ const HomeFooter = () => {
   return ReactDOM.createPortal(
     <div className='fixed bottom-0 w-full h-auto'>
       <div className='flex items-start justify-center mb-10'>
-        <button className='flex items-center justify-center text-sm p-4 w-[140px] h-12 text-white bg-black rounded-full hover:scale-105 hover:shadow hover:shadow-lg duration-300'>
+        <button className='flex items-center justify-center text-sm p-4 w-[140px] h-12 text-white bg-black rounded-full hover:scale-105 hover:shadow-lg duration-300'>
           지도 표시하기
           <BsFillMapFill className="ml-2 text-white bg-black text-md"/>
         </button>
