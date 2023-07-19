@@ -1,5 +1,7 @@
 import './styles/index.css'
 import { createRoot } from 'react-dom/client'
+import { Provider } from 'react-redux'
+import { store } from './store'
 
 import Router from './Router.tsx'
 
@@ -7,6 +9,10 @@ import Router from './Router.tsx'
 const el = document.getElementById('root') as HTMLElement
 const root = createRoot(el)
 
-root.render(<Router />)
+root.render(
+  <Provider store={store}>
+    <Router />
+  </Provider>
+)
 
 

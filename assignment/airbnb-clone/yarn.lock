@@ -685,6 +685,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^20.4.2":
+  version: 20.4.2
+  resolution: "@types/node@npm:20.4.2"
+  checksum: 99e544ea7560d51f01f95627fc40394c24a13da8f041121a0da13e4ef0a2aa332932eaf9a5e8d0e30d1c07106e96a183be392cbba62e8cf0bf6a085d5c0f4149
+  languageName: node
+  linkType: hard
+
 "@types/prop-types@npm:*":
   version: 15.7.5
   resolution: "@types/prop-types@npm:15.7.5"
@@ -928,6 +935,7 @@ __metadata:
   resolution: "airbnb-clone@workspace:."
   dependencies:
     "@reduxjs/toolkit": ^1.9.5
+    "@types/node": ^20.4.2
     "@types/react": ^18.2.14
     "@types/react-dom": ^18.2.6
     "@typescript-eslint/eslint-plugin": ^5.61.0
