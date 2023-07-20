@@ -3,15 +3,14 @@ import { AiTwotoneStar } from 'react-icons/ai'
 
 interface IPropsMainCard {
   size: number
+  photo: any
 }
 
 const MainCard = ({
   size,
+  photo
 }: IPropsMainCard) => {
-
-  console.log(size)
   let selectedSize;
-  
 
   if(size < 1024) {
     selectedSize = 'md';
@@ -24,8 +23,6 @@ const MainCard = ({
   } else {
     selectedSize = 'threeXl';
   }
-
-  console.log(selectedSize)
 
   const classes = className('w-full rounded-2xl', {
     'min-w-[332px] h-[415.4px]': selectedSize === 'md',
@@ -43,11 +40,13 @@ const MainCard = ({
 
   return (
     <article className={classes}>
-      <img className={classesImg} src="https://a0.muscache.com/im/pictures/33357308-3507-49e5-aaaf-0b5b9fe234fc.jpg?im_w=720" alt="" />
+      <div className="object-cover">
+        <img className={classesImg} src={photo.urls.small_s3} alt="image" style={{ maxHeight: '300px'}} />
+      </div>
       <div className='text-sm cursor-pointer'>
         {/* 지명, 별점 */}
         <div className='flex items-center justify-between font-AirbnbBold text-[15px]'>
-          <p>서울, 한국</p>
+          <p>{photo.id}</p>
           <p className='flex items-center justify-center font-AirbnbBlack'><AiTwotoneStar className="mr-1"/>5.00</p>
         </div>
         {/* 위치 날짜 */}
