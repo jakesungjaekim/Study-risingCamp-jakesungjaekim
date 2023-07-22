@@ -3,51 +3,50 @@ import { useEffect, useState, useRef } from 'react';
 import MainCard from './MainCard'
 import { IPhoto } from '../../@types/IPhto';
 
-import { useFetchPhotosQuery } from '../../store';
+// import { useFetchPhotosQuery } from '../../store';
 
 const MainGrid = () => {
+  const targetRef = useRef<HTMLDivElement>(null);
   const [windowSize, setWindowSize] = useState(window.innerWidth);
   const [page,setPage] = useState<number>(1);
-  const targetRef = useRef<HTMLDivElement>(null);
-  // const { data, isFetching, error, refetch } = useFetchPhotosQuery({ page: pageRef.current, limit: 10 })
-  
   const [photos, setPhotos] = useState<IPhoto[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
+  // const { data, isFetching, error, refetch } = useFetchPhotosQuery({ page: pageRef.current, limit: 10 })
 
-  useEffect(() => {
-    const fetchPhotos = async () => {
-      setLoading(true);
-      const API_KEY = 'nYg5FUscjor5cOFcHxXlNJiNgqiGV0Aef7DyuL3Ya0U';
-      const response = await axios.get('https://api.unsplash.com/photos/', {
-        headers: {
-          Authorization: `Client-ID ${API_KEY}`,
-        },
-        params: {
-          page: page,
-          per_page: 5,
-        },
-      });
-      const data = response.data;
-      console.log(data)
-      setPhotos(prevPhotos => [...prevPhotos, ...data]);
-      setLoading(false);
-    };
+  const fetchPhotos = async () => {
+    setLoading(true);
   
-    fetchPhotos();
-  }, [page]);
-
-
-
+    const API_KEY = 'nYg5FUscjor5cOFcHxXlNJiNgqiGV0Aef7DyuL3Ya0U';
+    const response = await axios.get('https://api.unsplash.com/photos/', {
+      headers: {
+        Authorization: `Client-ID ${API_KEY}`,
+      },
+      params: {
+        page: page,
+        per_page: 5,
+      },
+    });
+    const data = response.data;
+    setPhotos(prevPhotos => [...prevPhotos, ...data]);
+    setLoading(false);
+  }
+  
+  // Fetching Data
+    useEffect(() => {
+      fetchPhotos();
+    }, [page]);
+  
+  // INFINITE SCROLL
+  const observer = new IntersectionObserver((entries) => {
+    if(entries[0].isIntersecting) {
+      setPage(prev => prev + 1);
+    }
+  }, { threshold: 0.3 }
+  )
+  
+  // IntersectionObserver
   useEffect(()=>{
     const currentTarget = targetRef.current;
-    
-    const observer = new IntersectionObserver((entries) => {
-      if(entries[0].isIntersecting) {
-        setPage(prev => prev + 1);
-        console.log("Observer is working", page)
-      }
-    }, {threshold: 0.3 }
-    )
   
     if(currentTarget) {
       observer.observe(currentTarget)
@@ -58,10 +57,9 @@ const MainGrid = () => {
         observer.unobserve(currentTarget)
       }
     }
-  },[page])
+  },[targetRef])
 
-
-
+  // 반응형 Grid point Props
   useEffect(() => {
     const handleResize = () => {
       setWindowSize(window.innerWidth);
@@ -74,6 +72,7 @@ const MainGrid = () => {
     };
   }, []);
 
+  // Rendered Contents
   let content;
 
   if (loading) {

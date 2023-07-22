@@ -41,7 +41,7 @@ const MainCard = ({
   return (
     <article className={classes}>
       <div className="object-cover">
-        <img className={classesImg} src={photo.urls.small_s3} alt="image" style={{ maxHeight: '300px'}} />
+        <img className={classesImg} src={photo.urls.small_s3} alt="image" style={{ maxHeight: '280px'}} />
       </div>
       <div className='text-sm cursor-pointer'>
         {/* 지명, 별점 */}
