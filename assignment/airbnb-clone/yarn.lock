@@ -715,6 +715,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-slick@npm:^0.23.10":
+  version: 0.23.10
+  resolution: "@types/react-slick@npm:0.23.10"
+  dependencies:
+    "@types/react": "*"
+  checksum: 1e53fe8385e853881741a450d15c52d6433334b671fee4044939037f8e5b83968cb91fd9dbe7e6686e906882ebcf370b81bd55b6688f8e810020e23a968c0385
+  languageName: node
+  linkType: hard
+
 "@types/react@npm:*, @types/react@npm:^18.2.14":
   version: 18.2.15
   resolution: "@types/react@npm:18.2.15"
@@ -955,6 +964,7 @@ __metadata:
     "@types/node": ^20.4.2
     "@types/react": ^18.2.14
     "@types/react-dom": ^18.2.6
+    "@types/react-slick": ^0.23.10
     "@typescript-eslint/eslint-plugin": ^5.61.0
     "@typescript-eslint/parser": ^5.61.0
     "@vitejs/plugin-react": ^4.0.1

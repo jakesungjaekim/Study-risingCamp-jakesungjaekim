@@ -18,7 +18,7 @@ export default {
         AirbnbBook : ['AirbnbCereal-Book', 'sans-serif'],
         AirbnbLight : ['AirbnbCereal-Light', 'sans-serif'],
         AirbnbMedium : ['AirbnbCereal-Medium', 'sans-serif'],
-      }
+      },
     },
   },
   plugins: [],
