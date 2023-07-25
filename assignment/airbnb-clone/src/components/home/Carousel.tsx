@@ -5,6 +5,23 @@ import { CAROUSELDATA } from '../../constants/CAROUSELDATA'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 
 const Carousel:React.FC = () => {
+  const [isScrolled, setIsScrolled] = useState<boolean>(false)
+  const checkScroll = () => {
+    console.log("cheking Y", isScrolled)
+    setIsScrolled(window.scrollY > 10)
+  }
+
+  useEffect(() => {
+    console.log("isScrolled:", isScrolled);
+    
+    window.addEventListener('scroll', checkScroll)
+
+    return() => {
+      window.removeEventListener('scroll', checkScroll)
+    }
+  },[isScrolled])
+  
+
   const [currentSlide, setCurrentSlide] = useState<number>(0)
   const slideRef = useRef<HTMLDivElement>(null)
   const slideWidth = 200; // 이동할 픽셀값
@@ -42,7 +59,7 @@ const Carousel:React.FC = () => {
   
   return (
     <>
-    <section className='sticky w-screen px-10 pt-5 bg-white top-20'>
+    <section className={`sticky w-screen px-10 pt-5 bg-white top-20 ${isScrolled ? 'shadow-md' : ''}`}>
       <div className='flex w-full h-[78px]'>
         <div ref={slideRef} className='relative flex items-center justify-between overflow-x-hidden w-full md:min-w-[587.23px] lg:min-w-[843.23px] xl:min-w-[1099.23px]  2xl:min-w-[1279.23px] 3xl:w-full h-full transition duration-500'>
         {renderedCarouselData}
