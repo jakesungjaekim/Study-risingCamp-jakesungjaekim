@@ -75,13 +75,9 @@ const MainGrid = () => {
   // Rendered Contents
   let content;
 
-  if (loading) {
-    content = <div>Loading...</div>;
-  } else {
     content = photos.map(photo => (
       <MainCard size={windowSize} key={photo.id} photo={photo} />
     ));
-  }
 
 
 
@@ -89,7 +85,8 @@ const MainGrid = () => {
     <>
       <main className='w-screen px-10 mt-4'>
         <div className='grid w-full h-full grid-cols-1 md:grid-cols-2 gap-x-3 gap-y-10 lg:grid-cols-3 lg:gap-x-4 lg:gap-y-10 xl:grid-cols-4 xl:gap-x-5 xl:gap-y-10 2xl:grid-cols-5 3xl:grid-cols-6'> 
-          {content}
+        {content}
+        {loading && <div>Loading...</div>}
         </div>
       </main>
       <div ref={targetRef} id="scroll-target"  style={{ width: '100%',height: '10px' }}></div>
