@@ -7,7 +7,6 @@ import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 const Carousel:React.FC = () => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false)
   const checkScroll = () => {
-    console.log("cheking Y", isScrolled)
     setIsScrolled(window.scrollY > 10)
   }
 

@@ -1,41 +1,15 @@
-import axios from 'axios';
 import { useEffect, useState, useRef } from 'react';
 import MainCard from './MainCard'
-import { IPhoto } from '../../@types/IPhto';
-
+import { IPropsMainGrid } from '../../@types/IPropsMainGrid';
 // import { useFetchPhotosQuery } from '../../store';
 
-const MainGrid = () => {
+
+
+const MainGrid: React.FC<IPropsMainGrid> = ({setPage, photos, loading}) => {
   const targetRef = useRef<HTMLDivElement>(null);
   const [windowSize, setWindowSize] = useState(window.innerWidth);
-  const [page,setPage] = useState<number>(1);
-  const [photos, setPhotos] = useState<IPhoto[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
   // const { data, isFetching, error, refetch } = useFetchPhotosQuery({ page: pageRef.current, limit: 10 })
 
-  const fetchPhotos = async () => {
-    setLoading(true);
-  
-    const API_KEY = 'nYg5FUscjor5cOFcHxXlNJiNgqiGV0Aef7DyuL3Ya0U';
-    const response = await axios.get('https://api.unsplash.com/photos/', {
-      headers: {
-        Authorization: `Client-ID ${API_KEY}`,
-      },
-      params: {
-        page: page,
-        per_page: 5,
-      },
-    });
-    const data = response.data;
-    setPhotos(prevPhotos => [...prevPhotos, ...data]);
-    setLoading(false);
-  }
-  
-  // Fetching Data
-    useEffect(() => {
-      fetchPhotos();
-    }, [page]);
-  
   // INFINITE SCROLL
   const observer = new IntersectionObserver((entries) => {
     if(entries[0].isIntersecting) {

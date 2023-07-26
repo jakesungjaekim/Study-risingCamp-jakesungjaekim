@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { IPhoto } from '../../@types/IPhto';
+import { IPhoto } from '../../@types/IPhoto';
 
 const photoApi = createApi({
   reducerPath: 'photos',
