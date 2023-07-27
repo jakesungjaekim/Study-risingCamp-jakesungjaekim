@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @font-face {
   font-family: 'AirbnbCreal-Black';
   src: url('/fonts/AirbnbCereal-Black.ttf') format('truetype');

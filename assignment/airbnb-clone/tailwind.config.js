@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  daisyui: {
+    themes: ["light", "dark", "cupcake"],
+  },
   theme: {
     screens: {
       'xs': '450px',
@@ -21,6 +24,6 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }
 

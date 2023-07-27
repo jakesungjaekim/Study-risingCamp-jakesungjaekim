@@ -24,7 +24,6 @@ const MainGrid: React.FC<IPropsMainGrid> = ({setPage, photos, loading}) => {
   
     if(currentTarget) {
       observer.observe(currentTarget)
-      currentTarget.style.backgroundColor = 'red';
     }
     return () => {
       if(currentTarget) {
@@ -32,6 +31,7 @@ const MainGrid: React.FC<IPropsMainGrid> = ({setPage, photos, loading}) => {
       }
     }
   },[targetRef])
+  
 
   // 반응형 Grid point Props
   useEffect(() => {

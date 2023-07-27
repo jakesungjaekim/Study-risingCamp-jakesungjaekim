@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import className from 'classnames'
 import { AiTwotoneStar } from 'react-icons/ai'
 
@@ -38,6 +39,14 @@ const MainCard = ({
     'min-h-[281.2px]': selectedSize === 'threeXl',
   })
 
+  const [money, setMoney] = useState<number>(1844242341)
+
+  const addComma = (price: number) => {
+    let commaNumber = price?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    return commaNumber
+  }
+  
+
   return (
     <article className={classes}>
       <div className="object-cover">
@@ -56,7 +65,7 @@ const MainCard = ({
         </div>
         {/* 가격 */}
         <div className='font-AirbnbBold mt-[6px]'>
-          <p>₩184,771<span>/박</span></p>
+          <p>{addComma(money)}<span>/❤️{photo.likes}</span></p>
         </div>
       </div>
     </article>

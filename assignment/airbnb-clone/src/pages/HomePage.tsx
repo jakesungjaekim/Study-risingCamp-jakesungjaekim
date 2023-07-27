@@ -1,9 +1,10 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
-import Carousel from '../components/home/Carousel'
+// import Carousel from '../components/home/Carousel'
 import MainGrid from '../components/home/MainGrid'
 import HomeFooter from '../components/home/HomeFooter'
+import DaisyCarousel from '../components/home/DaisyCarousel'
 
 import { IPhoto } from '../@types/IPhoto'
 
@@ -11,6 +12,14 @@ const HomePage: React.FC = () => {
   const [page,setPage] = useState<number>(1);
   const [photos, setPhotos] = useState<IPhoto[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
+  const [sortType, setSortType] = useState<string>('default')
+
+  const sortPhotos = (photos: IPhoto[]) => {
+    if (sortType === 'likes') {
+      return [...photos].sort((a, b) => b.likes - a.likes);
+    }
+    return photos;
+  };
 
   const fetchPhotos = async () => {
     setLoading(true);
@@ -26,7 +35,8 @@ const HomePage: React.FC = () => {
       },
     });
     const data = response.data;
-    setPhotos(prevPhotos => [...prevPhotos, ...data]);
+    const sortedData = sortPhotos(data);
+    setPhotos((prevPhotos) => [...prevPhotos, ...sortedData]);
     setLoading(false);
   }
 
@@ -34,12 +44,16 @@ const HomePage: React.FC = () => {
     useEffect(() => {
       fetchPhotos();
     }, [page]);
-  
-    console.log(photos)
-  
+
+    useEffect(() => {
+      const sortedPhotos = sortPhotos(photos);
+      setPhotos(sortedPhotos);
+    }, [sortType]);
+
   return (
     <>
-      <Carousel />
+      <DaisyCarousel data={photos} onChangeSort={setSortType}/>
+      {/* <Carousel /> */}
       <MainGrid setPage={setPage} photos={photos} loading={loading}/>
       <HomeFooter />
     </>

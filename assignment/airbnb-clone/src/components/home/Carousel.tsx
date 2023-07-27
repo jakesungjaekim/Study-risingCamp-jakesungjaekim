@@ -39,6 +39,11 @@ const Carousel:React.FC = () => {
     }
   }
 
+  const handleChangeSlide = (id: number) => {
+    console.log(id)
+    setCurrentSlide(id)
+  }
+
   useEffect(() => {
     if(slideRef.current) {
       slideRef.current.style.transition = 'all 0.5s ease-in-out'
@@ -46,8 +51,8 @@ const Carousel:React.FC = () => {
     }
   }, [currentSlide])
 
-  const renderedCarouselData = CAROUSELDATA.map((data, idx) => (
-    <div key={data.id} className={`flex items-center justify-center min-w-[100px] overflow-hidden h-full transition duration-300 ease-in-out ${currentSlide === idx ? 'border-b-2 border-black' : ''}`}>
+  const renderedCarouselData = CAROUSELDATA.map((data) => (
+    <div key={data.id} onClick={()=>handleChangeSlide(data.id)} className={`flex items-center justify-center min-w-[100px] overflow-hidden h-full transition duration-150 ease-in-out hover:border-b-2 hover:border-gray-200 ${currentSlide === data.id ? 'border-b-2 border-black' : ''}`}>
       <div className='flex flex-col items-center justify-center h-12 space-y-2 w-14'>
         <img className='w-6 h-6' src={data.url} alt="image" />
         <p className='text-[12px] whitespace-nowrap'>{data.name}</p>
