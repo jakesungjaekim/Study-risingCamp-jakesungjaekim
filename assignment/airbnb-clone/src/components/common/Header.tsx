@@ -1,3 +1,5 @@
+import React,{ useState } from 'react'
+
 import { Link } from 'react-router-dom'
 import ImgLogo from '../../assets/images/image-logo.svg'
 import ImgLogo2 from '../../assets/images/image-logoText.svg'
@@ -5,10 +7,19 @@ import ImgGlobal from '../../assets/images/image-global.svg'
 import ImgMenu from '../../assets/images/image-menu.svg'
 import ImgPerson from '../../assets/images/image-person.svg'
 import ImgSearch from '../../assets/images/image-search.svg'
+import Dropdown from './Dropdown'
 
 const Header:React.FC = () => {
+
+  const [dropdown, setDropdown] = useState<boolean>(false);
+
+  const handleShowDropdown = () => {
+    setDropdown(prev => !prev);
+  }
+  
+
   return (
-    <header className='sticky top-0 w-screen h-20 px-10 bg-white'>
+    <header style={{ position: 'relative' }} className='sticky top-0 w-screen h-20 px-10 bg-white'>
       <div className="flex items-center w-full h-full justfify-center">
         {/* LOGO */}
           <Link to="/" className='min-w-[30px] w-full h-full flex items-center justify-start'>
@@ -40,11 +51,13 @@ const Header:React.FC = () => {
           <button className='flex items-center justify-center w-10 h-[42px] rounded-full hover:bg-gray-100 mr-2'>
             <img src={ImgGlobal} alt="image-global" />
           </button>
-          <div className='flex items-center justify-between w-[77px] h-[42px] px-3 py-[5px] border border-gray-200 rounded-full hover:shadow-lg'>
-            <img src={ImgMenu} alt="" />
-            <img className='ml-3' src={ImgPerson} alt="" />
-          </div>
+            <div onClick={handleShowDropdown} className='relative dropdown dropdown-bottom dropdown-end flex items-center justify-between w-[77px] h-[42px] px-3 py-[5px] border border-gray-200 rounded-full hover:shadow-lg'>
+              <img src={ImgMenu} alt="" />
+              <img className='ml-3' src={ImgPerson} alt="" />
+            </div>
+            {dropdown && <Dropdown />}
         </div>
+
       </div>
       <div className='absolute bottom-0 left-0 right-0 h-[1px] bg-gray-200'/>
     </header>

@@ -62,8 +62,7 @@ const Carousel:React.FC = () => {
 
   
   return (
-    <>
-    <section className={`sticky w-screen px-10 pt-5 bg-white top-20 ${isScrolled ? 'shadow-md' : ''}`}>
+    <section className={`z-0 sticky w-screen px-10 pt-5 bg-white top-20 ${isScrolled ? 'shadow-md' : ''}`}>
       <div className='flex w-full h-[78px]'>
         <div ref={slideRef} className='relative flex items-center justify-between overflow-x-hidden w-full md:min-w-[587.23px] lg:min-w-[843.23px] xl:min-w-[1099.23px]  2xl:min-w-[1279.23px] 3xl:w-full h-full transition duration-500'>
         {renderedCarouselData}
@@ -78,7 +77,6 @@ const Carousel:React.FC = () => {
         </div>
       </div>
     </section>
-    </>
   )
 }
 
