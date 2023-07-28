@@ -19,7 +19,7 @@ const Header:React.FC = () => {
   
 
   return (
-    <header style={{ position: 'relative' }} className='sticky top-0 w-screen h-20 px-10 bg-white'>
+    <header className='sticky top-0 w-screen h-20 px-10 bg-white'>
       <div className="flex items-center w-full h-full justfify-center">
         {/* LOGO */}
           <Link to="/" className='min-w-[30px] w-full h-full flex items-center justify-start'>
@@ -44,14 +44,14 @@ const Header:React.FC = () => {
           </div>
         </div>
         {/* ETC */}
-        <div className='flex items-center justify-between w-full h-full md:justify-end'>
+        <div className='relative flex items-center justify-between w-full h-full md:justify-end'>
           <div className='flex items-center justify-center p-3 text-sm rounded-full hover:bg-gray-100 font-AirbnbMedium whitespace-nowrap'>
             당신의 공간을 에어비앤비하세요
           </div>
           <button className='flex items-center justify-center w-10 h-[42px] rounded-full hover:bg-gray-100 mr-2'>
             <img src={ImgGlobal} alt="image-global" />
           </button>
-            <div onClick={handleShowDropdown} className='relative dropdown dropdown-bottom dropdown-end flex items-center justify-between w-[77px] h-[42px] px-3 py-[5px] border border-gray-200 rounded-full hover:shadow-lg'>
+            <div onClick={handleShowDropdown} className='dropdown dropdown-bottom dropdown-end flex items-center justify-between w-[77px] h-[42px] px-3 py-[5px] border border-gray-200 rounded-full hover:shadow-lg'>
               <img src={ImgMenu} alt="" />
               <img className='ml-3' src={ImgPerson} alt="" />
             </div>
