@@ -1,11 +1,13 @@
-import Todo from './Todo'
+import { Outlet } from 'react-router-dom'
+import Header from './Header'
 
 function App() {
 
 
   return (
     <>
-      <Todo />
+      <Header />
+      <Outlet />
     </>
   )
 }

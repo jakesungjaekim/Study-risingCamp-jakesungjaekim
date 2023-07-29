@@ -93,5 +93,5 @@ export const CAROUSELDATA = [
     id: 19,
     name: '스키장',
     url: 'https://a0.muscache.com/pictures/c8bba3ed-34c0-464a-8e6e-27574d20e4d2.jpg'
-  }
+  },
 ]

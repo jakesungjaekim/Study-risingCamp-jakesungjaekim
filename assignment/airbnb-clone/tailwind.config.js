@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  daisyui: {
+    themes: ["light", "dark", "cupcake"],
+  },
   theme: {
     screens: {
       'xs': '450px',
@@ -18,9 +21,9 @@ export default {
         AirbnbBook : ['AirbnbCereal-Book', 'sans-serif'],
         AirbnbLight : ['AirbnbCereal-Light', 'sans-serif'],
         AirbnbMedium : ['AirbnbCereal-Medium', 'sans-serif'],
-      }
+      },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }
 
