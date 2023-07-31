@@ -10,13 +10,11 @@ import ImgSearch from '../../assets/images/image-search.svg'
 import Dropdown from './Dropdown'
 
 const Header:React.FC = () => {
-
   const [dropdown, setDropdown] = useState<boolean>(false);
 
   const handleShowDropdown = () => {
-    setDropdown(prev => !prev);
+    setDropdown(prev => !prev)
   }
-  
 
   return (
     <header className='sticky top-0 w-screen h-20 px-10 bg-white'>
@@ -55,7 +53,7 @@ const Header:React.FC = () => {
               <img src={ImgMenu} alt="" />
               <img className='ml-3' src={ImgPerson} alt="" />
             </div>
-            {dropdown && <Dropdown />}
+            {dropdown && <Dropdown onCloseDropdown={handleShowDropdown} />}
         </div>
 
       </div>
