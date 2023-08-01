@@ -8,12 +8,23 @@ import ImgMenu from '../../assets/images/image-menu.svg'
 import ImgPerson from '../../assets/images/image-person.svg'
 import ImgSearch from '../../assets/images/image-search.svg'
 import Dropdown from './Dropdown'
+import AuthModal from './AuthModal'
 
 const Header:React.FC = () => {
   const [dropdown, setDropdown] = useState<boolean>(false);
+  const [showAuthModal, setShowAuthModal] = useState<boolean>(false)
 
   const handleShowDropdown = () => {
     setDropdown(prev => !prev)
+  }
+
+  const handleOpenModal = () => {
+    setShowAuthModal(true);
+    setDropdown(false);
+  }
+
+  const handleCloseModal = () => {
+    setShowAuthModal(false);
   }
 
   return (
@@ -53,9 +64,9 @@ const Header:React.FC = () => {
               <img src={ImgMenu} alt="" />
               <img className='ml-3' src={ImgPerson} alt="" />
             </div>
-            {dropdown && <Dropdown onCloseDropdown={handleShowDropdown} />}
+            {dropdown && <Dropdown onCloseDropdown={handleShowDropdown} onOpenModal={handleOpenModal} />}
+            {showAuthModal && <AuthModal onClose={handleCloseModal} />}
         </div>
-
       </div>
       <div className='absolute bottom-0 left-0 right-0 h-[1px] bg-gray-200'/>
     </header>
