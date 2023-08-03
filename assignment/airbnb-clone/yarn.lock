@@ -489,6 +489,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@googlemaps/js-api-loader@npm:^1.13.2":
+  version: 1.16.2
+  resolution: "@googlemaps/js-api-loader@npm:1.16.2"
+  dependencies:
+    fast-deep-equal: ^3.1.3
+  checksum: 122ee57cc6a936e50358aedc4e79042353590467210e901fb42d4e7d9123c248c4db5cd5407a350cb5bea6de9e9ef1a508c08ba593475285d90bc4b93db42f51
+  languageName: node
+  linkType: hard
+
+"@googlemaps/react-wrapper@npm:^1.1.35":
+  version: 1.1.35
+  resolution: "@googlemaps/react-wrapper@npm:1.1.35"
+  dependencies:
+    "@googlemaps/js-api-loader": ^1.13.2
+  peerDependencies:
+    react: ">=16.8.0"
+  checksum: 76fa473b1bc617c157b58fb8087b61c54e07484c4e983bb25269d7afa025f3d30b77e0cb0cbd37bcd33a0c3d1f3c43c9c070aed2e2a726773eee3d26788c4abf
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.11.10":
   version: 0.11.10
   resolution: "@humanwhocodes/config-array@npm:0.11.10"
@@ -665,6 +685,13 @@ __metadata:
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
   checksum: ad87447820dd3f24825d2d947ebc03072b20a42bfc96cbafec16bff8bbda6c1a81fcb0be56d5b21968560c5359a0af4038a68ba150c3e1694fe4c109a063bed8
+  languageName: node
+  linkType: hard
+
+"@types/googlemaps@npm:^3.43.3":
+  version: 3.43.3
+  resolution: "@types/googlemaps@npm:3.43.3"
+  checksum: e08a1fd0c591812359be79f1f5952758a45e2967e117a444c5494eacb03588231cbfeebec0e349063cb2c1dba99226a26378578a6d7a5ea4dab08169e11be77d
   languageName: node
   linkType: hard
 
@@ -960,7 +987,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "airbnb-clone@workspace:."
   dependencies:
+    "@googlemaps/react-wrapper": ^1.1.35
     "@reduxjs/toolkit": ^1.9.5
+    "@types/googlemaps": ^3.43.3
     "@types/node": ^20.4.2
     "@types/react": ^18.2.14
     "@types/react-dom": ^18.2.6
