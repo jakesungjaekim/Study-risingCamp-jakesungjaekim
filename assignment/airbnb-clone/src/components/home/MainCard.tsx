@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import className from 'classnames'
 import { AiTwotoneStar } from 'react-icons/ai'
+import { Link } from 'react-router-dom'
 
 interface IPropsMainCard {
   size: number
@@ -48,27 +49,29 @@ const MainCard = ({
   
 
   return (
-    <article className={classes}>
-      <div className="object-cover">
-        <img className={classesImg} src={photo.urls.small_s3} alt="image" style={{ maxHeight: '280px'}} />
-      </div>
-      <div className='text-sm cursor-pointer'>
-        {/* 지명, 별점 */}
-        <div className='flex items-center justify-between font-AirbnbBold text-[15px]'>
-          <p>{photo.id}</p>
-          <p className='flex items-center justify-center font-AirbnbBlack'><AiTwotoneStar className="mr-1"/>5.00</p>
+    <Link to={`/rooms/${photo.id}`}>
+      <article className={classes}>
+        <div className="object-cover">
+          <img className={classesImg} src={photo.urls.small_s3} alt="image" style={{ maxHeight: '280px'}} />
         </div>
-        {/* 위치 날짜 */}
-        <div className='text-gray-400'>
-          <p>산 및 정원 전망</p>
-          <p>9월11일~16일</p>
+        <div className='text-sm cursor-pointer'>
+          {/* 지명, 별점 */}
+          <div className='flex items-center justify-between font-AirbnbBold text-[15px]'>
+            <p>{photo.id}</p>
+            <p className='flex items-center justify-center font-AirbnbBlack'><AiTwotoneStar className="mr-1"/>5.00</p>
+          </div>
+          {/* 위치 날짜 */}
+          <div className='text-gray-400'>
+            <p>산 및 정원 전망</p>
+            <p>9월11일~16일</p>
+          </div>
+          {/* 가격 */}
+          <div className='font-AirbnbBold mt-[6px]'>
+            <p>{addComma(money)}<span>/❤️{photo.likes}</span></p>
+          </div>
         </div>
-        {/* 가격 */}
-        <div className='font-AirbnbBold mt-[6px]'>
-          <p>{addComma(money)}<span>/❤️{photo.likes}</span></p>
-        </div>
-      </div>
-    </article>
+      </article>
+    </Link>
   )
 }
 

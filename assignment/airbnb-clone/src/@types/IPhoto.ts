@@ -16,4 +16,9 @@ export interface IPhoto {
   liked_by_user: boolean;
   current_user_collections: any[];
   topic_submissions: any;
+  location: {
+    name: string;
+    city: string | null;
+    country: string | null;
+  };
 }
