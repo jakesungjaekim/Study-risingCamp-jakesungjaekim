@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom' 
 import { IPhoto } from '../../@types/IPhoto'
-import { Wrapper, Status } from '@googlemaps/react-wrapper'
+import { Wrapper } from '@googlemaps/react-wrapper'
 import Map from './Map'
 
 const Room = () => {
