@@ -1,0 +1,112 @@
+import React, { Children } from 'react';
+import './index.css'
+import { createStore } from 'redux';
+import { Provider, useDispatch } from 'react-redux';
+
+const initialState = {
+    number : 0
+}
+
+const reducer = (state, action) => {
+    if(state === undefined) {
+        return {
+            initialState
+        }
+    }
+
+    if(action.type === "number/increase") {
+        console.log("+ 함수 실행!")
+    } else if (action.type === "number/decrease") {
+        console.log("- 함수 실행!")
+    }
+
+    return null;
+}
+
+const store = createStore(reducer);
+
+const ReduxPractice = () => {
+    const value = "propsValue";
+    return (
+        <>
+        <Provider store={store}>
+            <Left1></Left1>
+            <Right1></Right1>
+        </Provider>
+        </>
+    )
+}
+
+
+
+
+const Left1 = () => {
+
+    return (
+        <div>
+            <h2>left1</h2>
+            <Left2/>
+        </div>
+    )
+}
+
+const Left2 = () => {
+
+    return (
+        <div>
+            <h2>left2</h2>
+            <Left3/>
+        </div>
+    )
+}
+
+const Left3 = () => {
+
+    return (
+        <div>
+            <h2>left3</h2>
+        </div>
+    )
+}
+
+
+const Right1 = () => {
+
+    return (
+        <div>
+            <h2>Right1</h2>
+            <Right2/>
+        </div>
+    )
+}
+
+const Right2 = () => {
+
+    return (
+        <div>
+            <h2>Right2</h2>
+            <Right3/>
+        </div>
+    )
+}
+
+const Right3 = () => {
+    const dispatch = useDispatch();
+    return (
+        <div>
+            <h2>Right3</h2>
+            <button
+                onClick={
+                  () => dispatch({type: "number/increase"})
+                }
+            >+</button>
+            <butto
+              onClick={
+                () => dispatch({type: "number/decrease"})
+              }
+            >-</butto>
+        </div>
+    )
+}
+
+export default ReduxPractice;
