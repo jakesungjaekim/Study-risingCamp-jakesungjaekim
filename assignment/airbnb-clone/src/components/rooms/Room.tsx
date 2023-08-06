@@ -23,7 +23,6 @@ const Room = () => {
     fetchPhoto()
   },[id])
 
-  // console.log(photo?.location.position)
 
   return (
     <div className='w-full h-screen'>

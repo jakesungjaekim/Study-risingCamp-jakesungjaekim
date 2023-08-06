@@ -76,9 +76,3 @@ const MainCard = ({
 }
 
 export default MainCard
-
-
-// 768 md: (332 x 415.4) // Grid2
-// 1024 lg: (298.66 x 383.73) // Grid3
-// 1280 xl: (257 x 344.15) // Grid4
-// 1920 3xl: (296 x 381.2) // Grid5

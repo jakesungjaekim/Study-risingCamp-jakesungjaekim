@@ -25,7 +25,7 @@ const HomePage: React.FC = () => {
     setLoading(true);
   
     const API_KEY = 'nYg5FUscjor5cOFcHxXlNJiNgqiGV0Aef7DyuL3Ya0U';
-    const response = await axios.get('https://api.unsplash.com/photos/', {
+    const response = await axios.get<IPhoto[]>('https://api.unsplash.com/photos/', {
       headers: {
         Authorization: `Client-ID ${API_KEY}`,
       },
