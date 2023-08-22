@@ -1,12 +1,15 @@
 import { useState } from 'react'
 import className from 'classnames'
 import { AiTwotoneStar } from 'react-icons/ai'
+import { HiOutlineHeart } from 'react-icons/hi'
 import { Link } from 'react-router-dom'
+// @types
+import { IPropsMainCard } from '../../@types/IPropsMainCard'
+// @RTK
+import { RootState } from '../../store'
+import { useDispatch, useSelector } from 'react-redux'
+import { toggleColor } from '../../store'
 
-interface IPropsMainCard {
-  size: number
-  photo: any
-}
 
 const MainCard = ({
   size,
@@ -46,14 +49,25 @@ const MainCard = ({
     let commaNumber = price?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
     return commaNumber
   }
+
+  const dispatch = useDispatch()
+  const isLiked = useSelector((state: RootState) => {
+    return state.like.colors[photo.id]
+  })
+  const handleColor = () => {
+    console.log('clicked')
+    dispatch(toggleColor(photo.id))
+  }
   
 
   return (
-    <Link to={`/rooms/${photo.id}`}>
-      <article className={classes}>
-        <div className="object-cover">
-          <img className={classesImg} src={photo.urls.small_s3} alt="image" style={{ maxHeight: '280px'}} />
-        </div>
+      <article className={`${classes} relative`}>
+        <Link to={`/rooms/${photo.id}`}>
+          <div className="object-cover">
+            <img className={classesImg} src={photo.urls.small_s3} alt="image" style={{ maxHeight: '280px'}} />
+            <HiOutlineHeart onClick={handleColor} className={`absolute text-3xl text-slate-400 top-3 right-3 stroke-1 stroke-white ${ isLiked ? 'fill-[#FF385C]' : 'fill-gray-500'}`}/>
+          </div>
+        </Link>
         <div className='text-sm cursor-pointer'>
           {/* 지명, 별점 */}
           <div className='flex items-center justify-between font-AirbnbBold text-[15px]'>
@@ -70,8 +84,9 @@ const MainCard = ({
             <p>{addComma(money)}<span>/❤️{photo.likes}</span></p>
           </div>
         </div>
+        {/* 하트 */}
+    
       </article>
-    </Link>
   )
 }
 

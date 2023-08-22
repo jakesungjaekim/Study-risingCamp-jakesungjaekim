@@ -4,7 +4,6 @@ import { IPropsDropdown } from '../../@types/IPropsDropdown'
 const Dropdown: React.FC<IPropsDropdown> = ({ onOpenModal }) => {
 
   const handleClick = () => { 
-    console.log('handleOpen')
     onOpenModal()
   }
 

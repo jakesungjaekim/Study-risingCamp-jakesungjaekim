@@ -3,7 +3,7 @@ import ImgFilter from '../../assets/images/image-filter.svg'
 import { CAROUSELDATA } from '../../constants/CAROUSELDATA'
 import { IPropsDaisyCarousel } from '../../@types/IPropsDaisyCarousel'
 
-const DaisyCarousel: React.FC<IPropsDaisyCarousel> = ({ data, onChangeSort }) => {
+const DaisyCarousel: React.FC<IPropsDaisyCarousel> = ({ onChangeSort }) => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false)
   const [currentSlide, setCurrentSlide] = useState<number>(0)
   
